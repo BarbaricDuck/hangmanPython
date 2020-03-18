@@ -106,17 +106,19 @@ def createGuessesLog():#This func makes a log which records
 
 def printTable():
     global incorrect
-    if incorrect > 8:#There are 9 stages untill hanged
-        gameOver()
+
         
     toPrint = (fullTable[incorrect-1])#Gets the array of the current hangman stage
     for i in range(len(fullTable[incorrect-1])):
         print(toPrint[i])#prints the hangman in stages
 
+    if incorrect > 8:#There are 9 stages untill hanged
+        gameOver()
+
 
 
 def guess():
-    global word, guessesLog,incorrect,guessed,joinedGuessLog, guess
+    global word, guessesLog,incorrect,guessed,joinedGuessLog
     #Global allows the variables to be used in other funcs
     
     joinedGuessLog = "".join(guessesLog)#Puts the guessLog back into a str
