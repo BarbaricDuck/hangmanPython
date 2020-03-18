@@ -2,7 +2,6 @@ text_file = open("words-en.txt", "r") #Reads the file with all the words
 lines = text_file.readlines() #Reads the lines
 text_file.close() #Must close the text file
 import random 
-import time 
 
 fullTable = [[' ',
               ' ',
