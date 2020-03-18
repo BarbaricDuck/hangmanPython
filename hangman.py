@@ -1,6 +1,6 @@
-text_file = open("words-en.txt", "r") #Reads the file with all the words
-lines = text_file.readlines() #Reads the lines
-text_file.close() #Must close the text file
+with open('Words-en.txt', 'r') as textFile:
+    lines = text_file.readlines() 
+
 import random 
 
 fullTable = [[' ',
@@ -84,14 +84,16 @@ fullTable = [[' ',
 ############### --Functions-- ###############
 
 def createWord():
+    global word
     randomNum = random.randint(0,len(lines))
     word = lines[randomNum]#selects a random number
     word = word[:-1]#This removes the \n after the word
-    return(word)
 
 
 
-def createGuessesLog(word):#This func makes a log which records
+
+def createGuessesLog():#This func makes a log which records
+    global guessesLog
                            #the user's correct guesses
     guessesLog=''
 
@@ -166,12 +168,10 @@ def gameOver():
         
 
 def main():
-    global word,guessesLog,incorrect,guessed
-
+    global word, guessesLog, incorrect, guessed
     incorrect = 0
-    guessed = ''
-    word = createWord()
-    guessesLog = createGuessesLog(word)
+    createWord()
+    createGuessesLog()
 
     while True:
         guess()
