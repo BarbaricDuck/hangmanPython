@@ -135,7 +135,7 @@ def guess():
 
     
     checker = False
-    for i in range(len(word)):
+    for _ in range(len(word)):
         if word[i] == guess:
             guessesLog[i]=guess #Add the correctly guessed letter to guessed
             
