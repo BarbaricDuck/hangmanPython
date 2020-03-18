@@ -116,7 +116,7 @@ def printTable():
 
 
 def guess():
-    global word, guessesLog,incorrect,guessed,joinedGuessLog
+    global word, guessesLog,incorrect,guessed,joinedGuessLog, guess
     #Global allows the variables to be used in other funcs
     
     joinedGuessLog = "".join(guessesLog)#Puts the guessLog back into a str
