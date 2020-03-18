@@ -131,9 +131,9 @@ def guess():
             continue
         break
 
-    guessed = guessed + guess
 
 
+    print(checker)
     checker = False #This checks if a letter has been guessed correctly
     for i in range(len(word)):
         if word[i] == guess:
@@ -143,13 +143,15 @@ def guess():
 
         joinedGuessLog = "".join(guessesLog)#Puts the guessLog back into a str
             
-    if checker == False:#If there wasn't a correctly guessed word
+    if checker is True:#If there wasn't a correctly guessed word
+                       #using 'is' is better because it is a boolean
                 
+         print('Correct!\n')
+    else:
+
         print('Incorrect!\n')
         incorrect+=1
-        printTable()#Print the hangman 
-    else:
-        print('Correct!\n')
+        printTable()#Print the hangman
 
 
 def checkWin():
