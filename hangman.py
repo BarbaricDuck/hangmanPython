@@ -96,7 +96,7 @@ def createGuessesLog(word):#This func makes a log which records
                            #the user's correct guesses
     guessesLog=''
 
-    for i in range(len(word)):
+    for _ in range(len(word)):
         
         guessesLog += '-'#makes it as long as the word
     guessesLog = list(guessesLog)#Turns it into an array because it was a str
