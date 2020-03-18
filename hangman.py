@@ -1,5 +1,5 @@
 with open('Words-en.txt', 'r') as textFile:
-    lines = text_file.readlines() 
+    lines = textFile.readlines() 
 
 import random 
 
@@ -93,7 +93,7 @@ def createWord():
 
 
 def createGuessesLog():#This func makes a log which records
-    global guessesLog
+    global guessesLog,guessed
                            #the user's correct guesses
     guessesLog=''
 
@@ -101,8 +101,7 @@ def createGuessesLog():#This func makes a log which records
         
         guessesLog += '-'#makes it as long as the word
     guessesLog = list(guessesLog)#Turns it into an array because it was a str
-
-    return guessesLog
+    guessed = '' #As this is only called at the start, there have been no guesses
 
 
 def printTable():
@@ -130,6 +129,7 @@ def guess():
         if guess in guessed:
             print('You already guessed that!\n')
             continue
+        
         break
 
 
@@ -153,6 +153,8 @@ def guess():
         print('Incorrect!\n')
         incorrect+=1
         printTable()#Print the hangman
+    guessed += guess #Add the guess to guessed words
+    guessed += ','     
 
 
 def checkWin():
