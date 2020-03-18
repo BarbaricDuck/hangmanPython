@@ -1,8 +1,8 @@
 text_file = open("words-en.txt", "r") #Reads the file with all the words
 lines = text_file.readlines() #Reads the lines
 text_file.close() #Must close the text file
-from random import * #using * stops the need for 'random.' 
-from time import * #Vise versa
+import random 
+import time 
 
 fullTable = [[' ',
               ' ',
@@ -85,7 +85,7 @@ fullTable = [[' ',
 ############### --Functions-- ###############
 
 def createWord():
-    randomNum = randint(0,len(lines))
+    randomNum = random.randint(0,len(lines))
     word = lines[randomNum]#selects a random number
     word = word[:-1]#This removes the \n after the word
     return(word)
@@ -133,8 +133,8 @@ def guess():
 
 
 
-    print(checker)
-    checker = False #This checks if a letter has been guessed correctly
+    
+    checker = False
     for i in range(len(word)):
         if word[i] == guess:
             guessesLog[i]=guess #Add the correctly guessed letter to guessed
