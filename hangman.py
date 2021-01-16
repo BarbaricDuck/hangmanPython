@@ -45,10 +45,6 @@ def guess(correctGuesses,guessed,word,incorrect):
     else:
         return 'incorrect'
           
-    
-        
-
-
 def checkWin(word,correctGuesses):
     
     if word == ''.join(correctGuesses):
@@ -76,8 +72,6 @@ def main():
             print('Correct!\n')
         
         checkWin(word,correctGuesses)
-
-        
         
 def repeat():
     x = int(input('To go again, enter 1...'))
