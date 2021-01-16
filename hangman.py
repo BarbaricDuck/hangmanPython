@@ -41,7 +41,7 @@ def guess(correctGuesses,guessed,word,incorrect):
             correctGuesses[i]=guess  # Add the correctly guessed letter to guessed           
             checker = True            
     if checker is True:             
-         return 'correct'
+        return 'correct'
     else:
         return 'incorrect'
           
