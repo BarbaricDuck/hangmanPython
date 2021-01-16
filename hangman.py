@@ -21,7 +21,7 @@ def createcorrectGuesses(word):
     return correctGuesses
 
 def printTable(incorrect,word):
-    print(fullTable[incorrect-1])  # Prints the current hangman stage
+    print(fullTable[incorrect])  # Prints the current hangman stage
     if incorrect > 8:  # There are 9 stages until hanged
         gameOver(word)
 
@@ -41,10 +41,8 @@ def guess(correctGuesses,guessed,word,incorrect):
             correctGuesses[i]=guess  # Add the correctly guessed letter to guessed           
             checker = True            
     if checker is True:             
-         print('Correct!\n')
          return 'correct'
     else:
-        print('Incorrect!\n')
         return 'incorrect'
           
     
@@ -62,6 +60,7 @@ def gameOver(word):
     repeat()
 
 def main():
+    clear()
     incorrect = 0
     guessed = []
     word = createWord()
@@ -71,6 +70,10 @@ def main():
         if guess(correctGuesses,guessed,word,incorrect) == 'incorrect':
             incorrect += 1
             printTable(incorrect,word)
+            print('Incorrect!\n')
+        else:
+            printTable(incorrect,word)
+            print('Correct!\n')
         
         checkWin(word,correctGuesses)
 
